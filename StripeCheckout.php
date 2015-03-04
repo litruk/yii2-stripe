@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright Victor Demin, 2014
+ * @copyright Copyright Victor Demin, 2015
  * @license https://github.com/ruskid/yii2-stripe/LICENSE
  * @link https://github.com/ruskid/yii2-stripe#readme
  */
@@ -98,6 +98,12 @@ class StripeCheckout extends \yii\base\Widget {
     public $allowRemember;
 
     /**
+     * @see Stripe. Css class for pay button.
+     * @var string css class
+     */
+    public $buttonClass = 'stripe-button';
+
+    /**
      * @see Init extension default
      */
     public function init() {
@@ -138,7 +144,7 @@ class StripeCheckout extends \yii\base\Widget {
                     'data-email' => $this->userEmail,
                     'data-label' => $this->label,
                     'data-allow-remember-me' => $this->allowRemember,
-                    'class' => 'stripe-button',
+                    'class' => $this->buttonClass,
         ]);
     }
 
